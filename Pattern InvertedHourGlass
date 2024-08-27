@@ -1,0 +1,65 @@
+Take N as input. For a value of N=5, we wish to draw the following pattern :
+
+             5                   5 
+             5 4               4 5 
+             5 4 3           3 4 5 
+             5 4 3 2       2 3 4 5 
+             5 4 3 2 1   1 2 3 4 5 
+             5 4 3 2 1 0 1 2 3 4 5 
+             5 4 3 2 1   1 2 3 4 5 
+             5 4 3 2       2 3 4 5 
+             5 4 3           3 4 5 
+             5 4               4 5 
+             5                   5 
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    int num = sc.nextInt();
+    int star=1;
+    int space=2*num-1;
+    int row=1;
+    
+    while(row<=2*num+1){
+        int a=num;
+        // star printing...
+        int i=1;
+        while(i<=star){
+          System.out.print(a+" ");
+          i++;
+          a--;
+        }
+        // space printing..
+        int j=1;
+        while(j<=space){
+            System.out.print("  ");
+            j++;
+        }
+        // again star printing...
+        int k=1;
+        int b=num-star+1;
+        if(row==num+1){
+            k=2;
+            b=num-star+2;
+        }
+        while(k<=star){
+            System.out.print(b+" ");
+            b++;
+            k++;
+        }
+        // next roe preaparation...
+            if(row<num+1){
+                star++;
+                space-=2;
+            }
+            else{
+                star--;
+                space+=2;
+            }
+            row++;
+            System.out.println();
+    }
+    }
+}
