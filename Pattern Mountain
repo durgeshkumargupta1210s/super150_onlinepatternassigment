@@ -1,0 +1,65 @@
+Take N (number of rows), print the following pattern (for N = 4).
+
+                       1           1
+                       1 2       2 1  
+                       1 2 3   3 2 1
+                       1 2 3 4 3 2 1   
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int star =1;
+		int row =1;
+		int space =2*(num)-3;
+        
+		while(row<=num) {
+            int a=1;
+			//star
+			int i=1;
+			while(i<=star) {
+				System.out.print(a+"\t");
+                a++;
+				i++;
+			}
+            a--;
+			// space
+			int j=1;
+			while(j<=space) {
+				System.out.print("\t");
+				j++;
+
+			}
+			// star
+		int k=1;
+			if(row==num) {				
+				k=2;
+                a--;
+			}
+			while(k<=star) {
+            
+				System.out.print(a+"\t");
+// verical mirroring...
+            if(k<star){
+                a--;
+            }
+            else{
+                a++;
+            }
+				k++;
+
+			}
+			// next row preparation
+			System.out.println();
+			row++;
+			space-=2;
+			star++;
+			
+		}
+
+
+
+    }
+}
