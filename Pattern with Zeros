@@ -1,0 +1,41 @@
+Take N (number of rows), print the following pattern (for N = 5)
+1
+2 2
+3 0 3
+4 0 0 4
+5 0 0 0 5
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+	        int num = sc.nextInt();
+	        int row=1;
+	        int star=1;
+	        int a=1;
+	        while(row<=num){
+	            // star printing..
+	            int i=1;
+	            while(i<=star){
+	            	if(i==1 || i==star) {
+	            		System.out.print(a+"\t");
+
+	            	}
+	            	else {
+	            		System.out.print(0+"\t");
+	            	}
+	                	                
+	            		i++;
+	                
+	            }
+	            a++;
+	            star++;
+	            row++;
+	            System.out.println();
+	        }
+        
+
+    }
+}
