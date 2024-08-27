@@ -1,0 +1,48 @@
+Take N (number of rows), print the following pattern (for N = 4).
+
+                       1 
+                     2 3 2
+                   3 4 5 4 3
+                 4 5 6 7 6 5 4
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		int star =1;
+		int row =1;
+		int space =num-1;
+		int val=1;
+		while(row<=num) {
+			// space
+			int i=1;
+			while(i<=space) {
+				System.out.print("\t");
+				i++;
+			}
+			// star 
+			
+			int j=1;
+			while(j<=star) {
+				System.out.print(val+"\t");
+				if(j<star/2+1) {
+					val++;
+				}
+				else {
+					val--;
+				}
+				j++;
+			}
+			// next row ki prep
+			row++;
+			System.out.println();
+			space--;
+			star=star+2;
+			val+=2;
+		}
+
+    }
+}
